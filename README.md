@@ -69,6 +69,11 @@ A full-featured, ClickUp-style task management app enriched with Notion superpow
 
 ## Setup
 
+> **Hit the Supabase free-tier limits (e.g. 2 active projects)?** The whole backend also runs
+> self-hosted with zero app changes — see [docs/SELF_HOSTING.md](docs/SELF_HOSTING.md) for the
+> Coolify/Docker guide (Oracle Cloud free VM or any small VPS). Then skip to step 3 below with
+> your self-hosted URL and anon key.
+
 ### 1. Create the Supabase project
 
 1. Create a project at [supabase.com](https://supabase.com) (free tier is fine).
