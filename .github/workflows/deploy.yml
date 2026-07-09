@@ -33,18 +33,11 @@ jobs:
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-          
-      - name: Debug dist
-        run: |
-          echo "=== DIST ==="
-          ls -R dist
-          echo ""
-          echo "=== INDEX.HTML ==="
-          cat dist/index.html
-            # SPA fallback: GitHub Pages serves 404.html for unknown paths;
-            # the app uses hash routing so a copy of index.html is enough.
-            - name: Add SPA fallback
-              run: cp dist/index.html dist/404.html
+
+      # SPA fallback: GitHub Pages serves 404.html for unknown paths;
+      # the app uses hash routing so a copy of index.html is enough.
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
