@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-surface-light-2 text-gray-800 dark:bg-surface-dark dark:text-gray-100;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300 dark:bg-gray-600;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+  .btn-ghost {
+    @apply btn text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-surface-dark-3;
+  }
+  .btn-outline {
+    @apply btn border border-gray-200 text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-surface-dark-3;
+  }
+  .input {
+    @apply w-full rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-800 placeholder-gray-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 dark:border-gray-700 dark:bg-surface-dark-2 dark:text-gray-100;
+  }
+  .card {
+    @apply rounded-lg border border-gray-200 bg-white shadow-card dark:border-gray-700/60 dark:bg-surface-dark-2;
+  }
+  .menu-panel {
+    @apply z-50 min-w-[180px] overflow-hidden rounded-lg border border-gray-200 bg-white py-1 shadow-modal dark:border-gray-700 dark:bg-surface-dark-2;
+  }
+  .menu-item {
+    @apply flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-surface-dark-3;
+  }
+}
+
+/* Kanban drag feedback */
+.drag-over {
+  @apply ring-2 ring-brand-400 ring-offset-1 dark:ring-offset-surface-dark;
+}
+.dragging {
+  @apply rotate-1 opacity-60;
+}
